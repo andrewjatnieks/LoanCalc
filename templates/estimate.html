@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2> VTM Estimator </h2>
+<hr />
+
+<form action="" method="POST">
+	<p>
+		<label for="tankRadius">
+			Tank radius: <input type="text" name="tankRad" id="tankRadius" placeholder="radius in inches" autofocus required>
+		</label>
+	</p>
+
+	<p>
+		<label for="tankHeight">
+			Tank height:
+			<input type="text" name="tankHt" id="tankHeight" placeholder="height in inches" required>
+		</label>
+	</p>
+
+	<input type="submit" value="Submit">
+
+	<input type="reset" value="Clear">
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div>
+<h2> Welcome to VTM! </h2> <hr />
+
+<fig><img src="{{ url_for('static', filename='images/above_ground_vertical_tanks.jpg') }}" class="responsive" /></fig>
+
+<figcaption>
+	<a href="https://www.deq.virginia.gov/Programs/LandProtectionRevitalization/PetroleumProgram/StorageTanks/AbovegroundStorageTanks.aspx">image source</a>
+</figcaption>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat urna, mattis sit amet eleifend quis, interdum non
+	metus. Suspendisse turpis sem, iaculis non lorem eu, molestie efficitur eros. Suspendisse vel gravida tortor, id
+	aliquam mauris. Sed maximus condimentum odio, eu congue ante consequat id. Praesent tincidunt varius egestas. Nunc
+	pretium non nulla a malesuada. Donec vel purus iaculis, dapibus libero non, luctus elit. Aliquam eu imperdiet ante.
+	Morbi sit amet fringilla ligula. Suspendisse potenti. Maecenas sodales suscipit sagittis.
+</p>
+</div>
+{% endblock %}
