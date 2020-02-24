@@ -5,45 +5,39 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', pageTitle='Vertical Tank Maintenance')
+    return render_template('index.html', pageTitle='Loan Calulation')
 
 @app.route('/about')
 def about():
-    return render_template('about.html', pageTitle='About VTM')
+    return render_template('about.html', pageTitle='About LCS')
 
 @app.route('/estimate', methods=['GET', 'POST'])
 def estimate():
 
     if request.method == 'POST':
         form = request.form
-        radius = float(form['tankRad'])
-        height = float(form['tankHt'])
+        
+        #take in user loan information
+        #take in loan amount
+        LOAN_AMT = float(form['loanAmt'])
+        RATE = float(form['rate'])
+        PAYMENTS = float(form['payments'])
+        YEARS = float(form['years'])
 
-        #print(radius)
-        #print(height)
+        # Number periodic payments
+        n = payments * years
+        #Periodic interest rate
+        i = RATE / periodicPMTS
 
-        PI = 3.14
-        MATERIALCOST = 25
-        LABORCOST = 15
+        discFactor =  ((( 1 + i) ^ n ) - 1 ) / ( i ( 1 + i ) ^ n)
 
-        topArea = PI * radius**2
-        sideArea = (2 * (PI * (radius * height)))
-        totalAreaSqFt = (topArea + sideArea)/144 #convert from square inches to square feet
-        # print(topArea)
-        # print(sideArea)
-        # print(totalAreaSqFt)
-
-        totalMaterialCost = totalAreaSqFt * MATERIALCOST
-        totalLaborCost = totalAreaSqFt * LABORCOST
-        # print(totalMaterialCost)
-        # print(totalLaborCost)
-
-        totalBidPrice = totalMaterialCost + totalLaborCost
-        print(totalBidPrice)
+        P = LOAN_AMT / discFactor #these are monthly payments
+       
+        print(P)
 
 
 
-    return render_template('estimate.html', pageTitle='Tank Painting Estimate')
+    return render_template('estimate.html', pageTitle='Loan Calulator')
 
 if __name__ == '__main__':
     app.run(debug=True)
