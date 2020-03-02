@@ -2,20 +2,33 @@
 
 {% block body %}
 
-<h2> VTM Estimator </h2>
+<h2>Loan Calaculator!</h2>
 <hr />
 
 <form action="" method="POST">
 	<p>
-		<label for="tankRadius">
-			Tank radius: <input type="text" name="tankRad" id="tankRadius" placeholder="radius in inches" autofocus required>
+		<label for="loanAmt">
+			Loan Amount: <input type="text" name="loanAmt" id="loanAmt" placeholder="Loam Amount..." autofocus required>
 		</label>
 	</p>
 
 	<p>
-		<label for="tankHeight">
+		<label for="loanRate">
+			Rate:
+			<input type="text" name="rate" id="rate" placeholder="Rate..." required>
+		</label>
+	</p>
+
+	<p>
+		<label for="Payments">
+			Number of yearly payments:
+			<input type="text" name="payments" id="yearlyPmts" placeholder="Yearly payments..." required>
+		</label>
+	</p>
+	<p>
+		<label for="years">
 			Tank height:
-			<input type="text" name="tankHt" id="tankHeight" placeholder="height in inches" required>
+			<input type="text" name="years" id="years" placeholder="How many years..." required>
 		</label>
 	</p>
 
