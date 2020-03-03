@@ -25,17 +25,15 @@ def estimate():
         YEARS = float(form['years'])
 
         # Number periodic payments
-        n = PAYMENTS * YEARS
+        n = (PAYMENTS * YEARS)
         #Periodic interest rate
         i = RATE / n
 
-        discFactor =  ((( 1 + i) ^ n ) - 1 ) / ( i ( 1 + i ) ^ n)
+        discFactor =  ((( 1 + i) ** n ) - 1 ) / ( i *( 1 + i ) ** n)
 
-        P = LOAN_AMT / discFactor #these are monthly payments
-       
-        print(P)
+        p = LOAN_AMT / discFactor #these are monthly payment
 
-        calculation = "The loan amount calculated is ${0:,.f}".format(P)
+        calculation = "The loan amount calculated is ${0:,.2f}".format(p)
         return render_template('estimate.html', display=calculation, pageTitle='Calculated Monthly Payments')
 
 

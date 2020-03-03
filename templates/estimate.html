@@ -13,14 +13,14 @@
 	</p>
 
 	<p>
-		<label for="loanRate">
+		<label for="rate">
 			Rate:
 			<input type="text" name="rate" id="rate" placeholder="Rate..." required>
 		</label>
 	</p>
 
 	<p>
-		<label for="Payments">
+		<label for="payments">
 			Number of yearly payments:
 			<input type="text" name="payments" id="payments" placeholder="Yearly payments..." required>
 		</label>
@@ -37,6 +37,10 @@
 	<input type="reset" value="Clear">
 
 </form>
+
+<p>
+	<h3> {{ display }} </h3>
+</p>
 
 
 {% endblock %}
